@@ -1,6 +1,3 @@
-/*
- * Copyright (c) Dematic GmbH 2021. All rights reserved. Confidential.
- */
 package com.example.phoneNumbers.services;
 
 import java.util.List;

@@ -1,7 +1,6 @@
-// src/components/basic.table.js
-import React from "react";
 
-import { useTable,useEffect , useState} from 'react-table'
+import React from "react";
+import { useTable, useEffect, useState } from 'react-table'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 
@@ -10,12 +9,20 @@ function BasicTableComponent() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios("http://localhost:8080/International-Phone-Number/customerData/allPages?pageNo=0&pageSize=5") 
-          .then((res) => {
-            setData(res.data);
-          })
-          .catch((err) => console.log(err))
-      }, []);
+        axios("http://localhost:8080/International-Phone-Number/customerData/allPages?pageNo=0&pageSize=5")
+            .then((res) => {
+                setData(res.data)
+                // .map(function (customer) {
+                //     <div>
+                //         <div>{customer.custId}</div>
+                //         <div>{customer.phoneNo}</div>
+                //         <div>{customer.country}</div>
+                //         <div>{customer.state}</div>
+                //     </div>
+                // })
+            })
+            .catch((err) => console.log(err))
+    }, []);
 
     const columns = [
         {
